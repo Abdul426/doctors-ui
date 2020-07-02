@@ -8,21 +8,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ibm.ro.openshift.mysqlui.model.Doctor;
 import com.ibm.ro.openshift.mysqlui.service.DoctorService;
 
 @Controller
+@RequestMapping("/")
 public class DoctorController {
-	@Value("${spring.application.name}")
-	String appName;
 
 	@Autowired
 	DoctorService doctorService;
 
-	@GetMapping("/")
+	@GetMapping
 	public String homePage(Model model) {
-		model.addAttribute("appName", appName);
 		List<Doctor> doctors = new ArrayList<Doctor>();
 		doctors = doctorService.findAll();
 		model.addAttribute("doctors", doctors);
@@ -31,13 +32,19 @@ public class DoctorController {
 
 	@GetMapping("/delete")
 	public String delete(Model model) {
-		model.addAttribute("appName", appName);
 		return "delete";
 	}
 
 	@GetMapping("/create")
 	public String create(Model model) {
-		model.addAttribute("appName", appName);
+		return "delete";
+	}
+	
+	@PostMapping
+	public String createDoctor(@RequestBody Doctor doctor, Model model) {
+		System.out.println("In "+doctor);
+		Doctor createdDoc = doctorService.createDoctor(doctor);
+		model.addAttribute("doctor", createdDoc);
 		return "create";
 	}
 

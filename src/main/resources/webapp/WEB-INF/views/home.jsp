@@ -18,7 +18,7 @@
 	<br />
 	<br />
 	<div class="container-fluid">
-		<table class="table table-bordered">
+		<table class="table table-bordered text-center">
 			<thead>
 				<tr>
 					<th scope="col">#</th>

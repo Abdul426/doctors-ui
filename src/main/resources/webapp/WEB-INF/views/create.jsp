@@ -17,7 +17,24 @@
 
 	<br />
 	<br />
-	<div class="container">Create Feature Coming Soon...</div>
+	<div class="container-fluid">
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Specialization</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="doctor : ${doctor}">
+					<td><span th:text="${doctor.id}"> ID </span></td>
+					<td><span th:text="${doctor.name}"> Name </span></td>
+					<td><span th:text="${doctor.specilization}"> Specilization </span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<script>
 		window.onscroll = function() {

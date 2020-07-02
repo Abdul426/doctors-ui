@@ -18,7 +18,7 @@
 
 	<br />
 	<br />
-	<div class="container">Delete Feature Coming Soon...</div>
+	<div class="container">In Next Version...</div>
 
 	<script>
 		window.onscroll = function() {
