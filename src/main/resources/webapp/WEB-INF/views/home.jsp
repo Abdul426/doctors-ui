@@ -21,9 +21,9 @@
 		<table class="table table-bordered text-center">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Name</th>
-					<th scope="col">Specialization</th>
+					<th scope="col" class="text-center">#</th>
+					<th scope="col" class="text-center">Name</th>
+					<th scope="col" class="text-center">Specialization</th>
 				</tr>
 			</thead>
 			<tbody>
